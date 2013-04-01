@@ -28,7 +28,7 @@ gem 'jquery-rails', '~> 2.1.3'
 gem 'haml'
 gem 'invity'
 gem 'omniauth-facebook'
-# gem 'fancybox-rails', :git => 'https://github.com/sverigemeny/fancybox-rails'
+gem 'fancybox-rails', :git => 'https://github.com/sverigemeny/fancybox-rails'
 
 
 
