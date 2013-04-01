@@ -1,0 +1,26 @@
+.invite_wrapper
+  .inside
+    .header
+      .text Select the friends you would like to invite from the list below.
+      .input
+        %input{:type => "text", placeholder: 'Search by name', id: 'searchFriends', class: 'pull-left'}/
+        .span3.pull-left{style: 'margin:5px'} Selected (0)
+        .clearfix
+    .content
+      - @friends.each do |f|
+        .friend.pull-left{ title: f['name'] }
+          
+          .pull-left{style: 'margin-top: 20px;'}
+            %input.invited{:type => "checkbox", value: f['id']}/
+          
+          .pull-left.smallBox
+            .pull-left{style: 'margin: 5px;'}
+              = image_tag f['picture']['data']['url'], size: '50x50'
+            .pull-left{style: '    margin-left: 5px; margin-top: 25px;'}
+              = f['name'].split(' ')[0]
+      
+      .clearfix
+    .footer
+      .span4.pull-right= link_to 'Send Invites', new_invite_path, class: 'button pull-right'
+      .clearfix
+    .clearfix
